@@ -1,0 +1,54 @@
+.result-card {
+  list-style-type: none;
+  padding: 10px 18px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 12px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #e4e3e3;
+  }
+}
+
+.detail {
+  &__name {
+    font-weight: 600;
+
+    &:hover {
+      color: #0a5013;
+      .detail__tooltip {
+        display: contents;
+      }
+    }
+  }
+
+  &__tooltip {
+    position: relative;
+    display: none;
+
+    &__text {
+      position: fixed;
+      width: 700px;
+      height: max-content;
+      border-radius: 6px;
+      padding: 7px;
+      margin-left: 60px;
+      background-color: rgb(252, 250, 142, 0.8);
+      color: rgb(0, 0, 0, 0.7);
+      text-align: center;
+    }
+  }
+
+  &__price {
+    &__original {
+      font-size: 12px;
+    }
+
+    &__discount {
+      font-weight: 600;
+      margin-left: 9px;
+      color: #ba1200;
+    }
+  }
+}
