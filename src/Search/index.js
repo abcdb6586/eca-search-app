@@ -83,7 +83,6 @@ const Search = () => {
             Keine Suchergebnisse.
           </span>
         )}
-
       </div>
     </div>
   );
