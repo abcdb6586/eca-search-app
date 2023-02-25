@@ -6,7 +6,7 @@
   align-items: center;
 
   .search {
-    margin-top: 282px;
+    margin-top: 130px;
 
     &__searchbox {
       width: 578px;
@@ -64,8 +64,6 @@
       background-color: #ffffff;
       border-radius: 12px;
       padding: 8px;
-      max-height: 600px;
-      overflow-y: scroll;
 
       &__title {
         font-size: 12px;

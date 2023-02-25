@@ -16,23 +16,22 @@
 
       &:hover {
         color: #0a5013;
-        .detail__tooltip {
+        + .detail__tooltip {
           display: contents;
         }
       }
     }
 
     &__tooltip {
-      position: relative;
       display: none;
 
       &__text {
-        position: fixed;
+        position: absolute;
         width: 700px;
         height: max-content;
         border-radius: 6px;
         padding: 7px;
-        margin-left: 60px;
+        margin-left: 130px;
         background-color: rgb(252, 250, 142, 0.8);
         color: rgb(0, 0, 0, 0.7);
         text-align: center;

@@ -21,10 +21,10 @@ const ResultCard = ({ node }) => {
     <li className={styles['result-card']}>
       <span className={styles['detail__name']}>
         {product_name}
-        <div className={styles['detail__tooltip']}>
-          <span className={styles['detail__tooltip__text']}>{description}</span>
-        </div>
       </span>
+      <div className={styles['detail__tooltip']}>
+        <span className={styles['detail__tooltip__text']}>{description}</span>
+      </div>
 
       <div className={styles['detail__price']}>
         <span
