@@ -41,7 +41,7 @@ const Search = () => {
   }, [])
 
   return (
-    <div className={styles.container} onClick={() => setHits([])}>
+    <div className={styles.container}>
       <div className={styles['search']}>
         <div className={styles['search__searchbox']}>
           <form className={styles['search__searchbox__form']}>
