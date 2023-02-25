@@ -3,6 +3,7 @@ import algoliasearch from 'algoliasearch';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 import ResultCard from './ResultCard';
+import PopularSearch from './PopularSearch';
 
 import styles from './index.module.scss'
 
@@ -83,6 +84,8 @@ const Search = () => {
             Keine Suchergebnisse.
           </span>
         )}
+
+        {query.length === 0 && <PopularSearch />}
       </div>
     </div>
   );
