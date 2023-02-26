@@ -18,8 +18,7 @@ const Search = () => {
   const [hits, setHits] = useState([]);
   const focusRef = useRef();
 
-
-  const search = useCallback((event) => {
+  const handleInputOnchange = useCallback((event) => {
     const query = event.target.value;
     setQuery(query);
 
@@ -32,11 +31,11 @@ const Search = () => {
     }
   }, []);
 
-  const handleSearchClick = useCallback(() => {
+  const handleClickFocus = useCallback(() => {
     focusRef.current.focus()
   }, [])
 
-  const clearQuery = useCallback(() => {
+  const handleClearQuery = useCallback(() => {
     setQuery('')
     setHits([])
   }, [])
@@ -49,7 +48,7 @@ const Search = () => {
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
               className={styles['search__searchbox__button--search']}
-              onClick={handleSearchClick}
+              onClick={handleClickFocus}
             />
             <input
               type="text"
@@ -57,13 +56,13 @@ const Search = () => {
               placeholder='search'
               value={query}
               ref={focusRef}
-              onChange={search}
+              onChange={handleInputOnchange}
             />
             {query.length > 0 && (
               <FontAwesomeIcon
                 icon={faCircleXmark}
                 className={styles['search__searchbox__button--cancel']}
-                onClick={clearQuery}
+                onClick={handleClearQuery}
               />
             )}
           </form>

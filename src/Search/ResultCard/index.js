@@ -1,10 +1,10 @@
 import React from 'react'
 import styles from './index.module.scss'
 
-const tranferPrice = (price) => {
+const formatPrice = (price) => {
   const splitNumber = String(price).split('')
-  splitNumber.splice(splitNumber.length - 2, 0, ',').join('')
-  return splitNumber
+  splitNumber.splice(splitNumber.length - 2, 0, ',')
+  return splitNumber.join('')
 }
 
 const ResultCard = ({ node }) => {
@@ -31,12 +31,12 @@ const ResultCard = ({ node }) => {
           className={styles['detail__price__original']}
           style={discount ? { textDecoration: 'line-through' } : { fontSize: 'unset' }}
         >
-          € {tranferPrice(price)}
+          € {formatPrice(price)}
         </span>
 
         {discount && (
           <span className={styles['detail__price__discount']}>
-            € {tranferPrice(discount)}
+            € {formatPrice(discount)}
           </span>
         )}
       </div>
