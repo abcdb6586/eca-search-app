@@ -16,6 +16,7 @@ const index = client.initIndex('dev_eca_searchbar');
 const Search = () => {
   const [query, setQuery] = useState('');
   const [hits, setHits] = useState([]);
+  const [getResult, setGetResult] = useState(false)
   const focusRef = useRef();
 
   const handleInputOnchange = useCallback((event) => {
@@ -25,9 +26,11 @@ const Search = () => {
     if (query.length >= 3) {
       index.search(query).then(({ hits }) => {
         setHits(hits);
+        setGetResult(true)
       });
     } else {
       setHits([]);
+      setGetResult(false)
     }
   }, []);
 
@@ -78,7 +81,7 @@ const Search = () => {
             }
             )}
           </ul>
-        ) : query.length >= 3 && (
+        ) : query.length >= 3 && getResult && (
           <span className={styles['search__results__title--error']}>
             Keine Suchergebnisse.
           </span>
