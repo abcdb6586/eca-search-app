@@ -7,6 +7,9 @@
 
   .search {
     margin-top: 220px;
+    @media screen and (max-width: 600px) {
+      width: 90vw;
+    }
 
     &__searchbox {
       width: 578px;
@@ -16,6 +19,10 @@
       border-radius: 12px;
       padding: 4px 18px;
       gap: 6px;
+
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
 
       &__form {
         height: 100%;

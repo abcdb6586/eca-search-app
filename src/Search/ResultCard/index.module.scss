@@ -13,6 +13,9 @@
   .detail {
     &__name {
       font-weight: 600;
+      @media screen and (max-width: 600px) {
+        font-size: 12px;
+      }
 
       &:hover {
         color: #0a5013;
@@ -41,12 +44,19 @@
     &__price {
       &__original {
         font-size: 12px;
+        @media screen and (max-width: 600px) {
+          font-size: 10px;
+        }
       }
 
       &__discount {
         font-weight: 600;
         margin-left: 9px;
         color: #ba1200;
+
+        @media screen and (max-width: 600px) {
+          font-size: 12px;
+        }
       }
     }
   }
