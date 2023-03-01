@@ -7,6 +7,10 @@
   color: #284b4d;
   background-color: #d5ede4;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media screen and (max-width: 600px) {
     height: 25px;
     font-size: 12px;
