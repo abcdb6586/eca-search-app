@@ -17,7 +17,7 @@ const Search = () => {
   const [query, setQuery] = useState('');
   const [hits, setHits] = useState([]);
   const [getResult, setGetResult] = useState(false)
-  const focusRef = useRef();
+  const inputRef = useRef();
 
   const handleInputOnchange = useCallback((event) => {
     const query = event.target.value;
@@ -35,13 +35,19 @@ const Search = () => {
   }, []);
 
   const handleClickFocus = useCallback(() => {
-    focusRef.current.focus()
+    inputRef.current.focus()
   }, [])
 
   const handleClearQuery = useCallback(() => {
     setQuery('')
     setHits([])
   }, [])
+
+  const handlePopularSearchClick = useCallback((popularSearchText) => {
+    setQuery(popularSearchText)
+    const syntheticEvent = { target: { value: popularSearchText } };
+    handleInputOnchange(syntheticEvent);
+  }, [handleInputOnchange])
 
   return (
     <div className={styles.container}>
@@ -58,7 +64,7 @@ const Search = () => {
               className={styles['search__searchbox__input']}
               placeholder='search'
               value={query}
-              ref={focusRef}
+              ref={inputRef}
               onChange={handleInputOnchange}
             />
             {query.length > 0 && (
@@ -87,7 +93,7 @@ const Search = () => {
           </span>
         )}
 
-        {query.length === 0 && <PopularSearch />}
+        {query.length === 0 && <PopularSearch handleClick={handlePopularSearchClick} />}
       </div>
     </div>
   );
